@@ -1,0 +1,26 @@
+{
+  "name": "edgeone-pages-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to deploy static sites to EdgeOne Pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TencentEdgeOne/edgeone-pages-action.git"
+  },
+  "keywords": [
+    "github-action",
+    "edgeone",
+    "deployment",
+    "static-site",
+    "pages"
+  ],
+  "author": "EdgeOne Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TencentEdgeOne/edgeone-pages-action/issues"
+  },
+  "homepage": "https://github.com/TencentEdgeOne/edgeone-pages-action#readme"
+}

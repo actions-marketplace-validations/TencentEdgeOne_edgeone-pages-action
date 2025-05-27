@@ -1,0 +1,38 @@
+name: 'EdgeOne Pages Deploy'
+description: 'Deploy your static site to EdgeOne Pages'
+author: 'EdgeOne Team'
+
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
+
+inputs:
+  token:
+    description: 'EdgeOne API token'
+    required: true
+  project-name:
+    description: 'Project name for EdgeOne Pages'
+    required: true
+  build-path:
+    description: 'Path to the built static files'
+    required: false
+    default: './dist'
+  node-version:
+    description: 'Node.js version to use'
+    required: false
+    default: '20'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+    
+    - name: Deploy to EdgeOne Pages
+      shell: bash
+      run: |
+        npx edgeone pages deploy ${{ inputs.build-path }} --name ${{ inputs.project-name }} --token ${{ inputs.token }}
+      env:
+        EDGEONE_API_TOKEN: ${{ inputs.token }} 
